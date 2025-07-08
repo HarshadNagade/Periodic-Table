@@ -1,0 +1,250 @@
+/* --- GLOBAL STYLES --- */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #000000;
+  color: #333;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fffefe;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* --- CATEGORY LIST STYLES --- */
+#element-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+  list-style-type: none;  /* Remove the bullets */
+  padding: 0;  /* Remove default padding */
+}
+
+.category-item {
+  background-color: #e0e0e0;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.category-item:hover {
+  background-color: #90a4ae;  /* Light grey-blue for hover */
+}
+
+.category-item.highlight {
+  background-color: #64b5f6; /* Blue for the selected category */
+  color: white;
+}
+
+
+
+/* --- PERIODIC TABLE STYLES --- */
+.periodic-table {
+  display: grid;
+  grid-template-columns: repeat(18, 75px);
+  grid-auto-rows: 90px;
+  gap: 5px;
+  padding: 20px;
+  background: #000000;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+}
+
+.element {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 14px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.element:hover {
+  transform: scale(1.05);
+  z-index: 2;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.element .number {
+  font-size: 10px;
+  position: absolute;  top: 4px;
+  left: 6px;
+  color: #555;
+}
+
+.element .symbol {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+}
+
+.element .name {
+  font-size: 11px;
+  font-weight: bold;
+  color: #555;
+  margin-left: -5%;
+}
+
+
+
+
+
+/* Element categories with distinct colors */
+.alkali-metal  {
+  background-color: #ad1b6e;  /* Yellow for Alkali metals */
+}
+
+.alkaline_earth_metal, .alkaline {
+  background-color: #81c784;  /* Green for Alkaline metals */
+}
+
+.transition_metal,.transition {
+  background-color: #64b5f6;  /* Light blue for Transition metals */
+}
+
+.post-transition {
+  background-color: #4dd0e1;  /* Cyan for Post-transition metals */
+}
+
+.metalloids {
+  background-color: #ba68c8;  /* Purple for Metalloids */
+}
+
+.reactive-nonmetals {
+  background-color: #e57373;  /* Red for Reactive non-metals */
+}
+
+.noble-gases {
+  background-color: #ffd54f;  /* Light yellow for Noble gases */
+}
+
+.lanthanides {
+  background-color: #a1887f;  /* Brown for Lanthanides */
+}
+
+.actinides {
+  background-color: #90a4ae;  /* Blue-grey for Actinides */
+}
+
+.nonmetal {
+  background-color: #e57373; /* Red for Non-metals */
+}
+
+@media (max-width: 1200px) {
+  #element-list {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 800px) {
+  #element-list {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 500px) {
+  #element-list {
+    font-size: 10px;
+  }
+}
+.block-label {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+  background-color: #444;
+  padding: 4px;
+  border-radius: 5px;
+  margin-bottom: 2px;
+}
+
+.element {
+  border: 1px solid #ccc;
+}
+.periodic-table-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.block-labels {
+  display: grid;
+  grid-template-columns: repeat(18, 60px);
+  grid-template-rows: auto auto auto;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.block-labels .block {
+  text-align: center;
+  font-weight: bold;
+  background-color: #343a40;
+  color: white;
+  padding: 8px 0;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #777;
+}
+
+.s-block {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+}
+
+.p-block {
+  grid-column: 13 / span 6;
+  grid-row: 1;
+}
+
+
+.d-block-line {
+  grid-column: 3/ span 10;
+
+  background-color: #456789;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 5px;
+  text-align: center;
+  padding: 6px 0;
+  height: 30px;
+}
+
+
+/* Highlighted animation */
+@keyframes popHighlight {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+  }
+50% {
+    transform: scale(1.5); /* slightly more */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+  }
+  100% {
+    transform: scale(1.5);
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+.pop {
+  animation: popHighlight 1.5s ease-in-out;
+  z-index: 50;
+}
+
+
+
