@@ -7,5 +7,5 @@ Features:
 - Responsive design with CSS Grid and Flexbox
 - Stylish UI with smooth transitions
 
-This project is hosted you must visit it...!
+<i>This project is hosted you must visit it...!<\i>
 https://harshadnagade.github.io/Periodic-Table/
